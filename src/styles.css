@@ -1,0 +1,126 @@
+@import 'variables.css';
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+}
+
+.container {
+  max-width: 700px;
+  margin: 20px auto;
+  background: var(--white-color);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+}
+
+h1, h2 {
+  color: var(--text-color);
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.section {
+  margin-bottom: 15px;
+}
+
+.badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.badge .iconify {
+  margin-right: 8px;
+}
+
+.skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  list-style: none;
+  padding: 0;
+}
+
+.skills li {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 14px;
+  display: inline-block;
+}
+
+
+
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  h1, h2 {
+    font-size: 16px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .badge {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .skills li {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;        
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--white-color);
+  }
+
+  .container {
+    box-shadow: none;
+    border-radius: 0;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .badge, .skills li {
+    background-color: var(--primary-color) !important;
+    color: var(--white-color) !important;             
+  }
+
+  .section {
+    page-break-inside: avoid;
+  }
+
+  h1, h2 {
+    page-break-after: avoid;
+  }
+}
