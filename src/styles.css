@@ -32,22 +32,40 @@ h2 {
   display: flex;
   gap: 5px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .badge {
   display: flex;
   align-items: center;
-  background-color: var(--primary-color);
-  color: var(--white-color);
+  color: var(--primary-color);
   padding: 6px 10px;
   border-radius: 20px;
   font-size: 14px;
 }
 
-.badge .iconify {
-  margin-right: 8px;
+.badge:hover {
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+
+  a,
+  a:visited {
+    color: var(--white-color);
+  }
 }
+
+.badge .iconify {
+  margin-right: 2px;
+}
+
+
+.badge a:visited,
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
 
 .skills ul {
   display: flex;
@@ -65,8 +83,6 @@ h2 {
   font-size: 14px;
   display: inline-block;
 }
-
-
 
 .utility-buttons {
   display: flex;
@@ -102,12 +118,11 @@ h2 {
   font-size: 18px;
 }
 
-
-.show-on-print{
+.show-on-print {
   display: none;
 }
 
-.hide-on-print{
+.hide-on-print {
   display: block;
 }
 
@@ -123,10 +138,13 @@ a:visited {
 }
 
 hr {
-  border: 1px solid var(--primary-color);
+  border: none;
+  border-bottom: 1px solid var(--primary-color);
 }
 
+
 @media (max-width: 600px) {
+
   h1,
   h2 {
     font-size: 16px;
@@ -166,12 +184,9 @@ hr {
   body {
     margin: 0;
     padding: 0;
-    background-color: var(--white-color);
   }
 
   .container {
-    box-shadow: none;
-    border-radius: 0;
     max-width: 100%;
     margin: 0;
     padding: 0;
@@ -181,21 +196,15 @@ hr {
     display: none;
   }
 
-  .badge,
-  .skills li {
-    background-color: var(--primary-color) !important;
-    color: var(--white-color) !important;
-  }
-
   .section {
     page-break-inside: avoid;
   }
 
-  .show-on-print{
+  .show-on-print {
     display: block;
   }
 
-  .hide-on-print{
+  .hide-on-print {
     display: none;
   }
 
