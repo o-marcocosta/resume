@@ -44,15 +44,13 @@ h2 {
   font-size: 14px;
 }
 
-.badge:hover {
+.badge:hover{
   cursor: pointer;
   background-color: var(--primary-color);
   color: var(--white-color);
-
-  a,
-  a:visited {
+  a, a:visited {
     color: var(--white-color);
-  }
+  } 
 }
 
 .badge .iconify {
@@ -60,8 +58,7 @@ h2 {
 }
 
 
-.badge a:visited,
-a {
+.badge a:visited, a {
   color: var(--primary-color);
   text-decoration: none;
 }
@@ -144,7 +141,6 @@ hr {
 
 
 @media (max-width: 600px) {
-
   h1,
   h2 {
     font-size: 16px;
@@ -184,9 +180,12 @@ hr {
   body {
     margin: 0;
     padding: 0;
+    background-color: var(--white-color);
   }
 
   .container {
+    box-shadow: none;
+    border-radius: 0;
     max-width: 100%;
     margin: 0;
     padding: 0;
