@@ -1,108 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume - Marco Costa</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-    <script src="js/i18n.js"></script>
-    <script src="js/print.js"></script>
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marco Túlio Costa - Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="js/i18n.js"></script>
+  <script defer src="js/app.js"></script>
 </head>
+
 <body>
-    <div class="container">
-        <div class="utility-buttons">
-            <button class="lang-button" onclick="setLanguage('en')">
-                <span class="iconify" data-icon="twemoji:flag-united-kingdom"></span> English
-            </button>
-            <button class="lang-button" onclick="setLanguage('pt')">
-                <span class="iconify" data-icon="twemoji:flag-brazil"></span> Português
-            </button>
-            <button class="print-button" onclick="printPage()">
-                <span class="iconify" data-icon="mdi:printer"></span> Print
-            </button>
-        </div>
-        <h1 data-i18n="name">Marco Túlio Costa</h1>
-        <p data-i18n="title">Software Engineer | Full-stack Developer | Specialist in React, .NET, and Azure</p>
-        
-        <div class="section contact">
-            <div class="badges">
-                <a href="mailto:marcotscosta@gmail.com" aria-label="Email"><span class="badge"><span class="iconify" data-icon="mdi:email"></span>marcotscosta@gmail.com</span></a>
-                <a href="https://www.linkedin.com/in/o-marcocosta" target="_blank" aria-label="LinkedIn"><span class="badge"><span class="iconify" data-icon="mdi:linkedin"></span>o-marcocosta</span></a>
-                <a href="https://github.com/o-marcocosta" target="_blank" aria-label="GitHub"><span class="badge"><span class="iconify" data-icon="mdi:github"></span>o-marcocosta</span></a>
-                <a href="https://o-marcocosta.web.app/" target="_blank" aria-label="Personal Website"><span class="badge"><span class="iconify" data-icon="mdi:web"></span>o-marcocosta.web.app</span></a>
-            </div>
-        </div>
-        <hr/>
-        <div class="section">
-            <h2 data-i18n="professional_summary_title">Professional Summary</h2>
-            <p data-i18n="professional_summary">Software Engineer with over 12 years of programming experience, specialized in React, .NET, Azure, Java, and Python. A technical reference in architecture, best practices, and the development of scalable solutions, with strong adaptability and a fast learning curve for new technologies.</p>
-        </div>
-        
-        <div class="section">
-            <h2 data-i18n="professional_experience_title">Professional Experience</h2>
-            <p><strong>Accenture Brazil</strong> - <span data-i18n="accenture_role">Software Engineer</span> (Jul 2023 - Present)</p>
-            <ul>
-                <li data-i18n="accenture_responsibility_1">Software development with React, .NET, Azure Functions, Cosmos DB, and Azure Cloud.</li>
-                <li data-i18n="accenture_responsibility_2">Distributed software architecture definition and implementation, integrating services between Azure.cn and global Azure.</li>
-                <li data-i18n="accenture_responsibility_3">Implementation of PoC and knowledge sharing on LLMs and Gen AI.</li>
-            </ul>
+  <div class="toolbar no-print">
+    <div class="toolbar-left">
+      <button id="printBtn" type="button" aria-label="Print">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M19 8H5a2 2 0 0 0-2 2v6h4v3h10v-3h4v-6a2 2 0 0 0-2-2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="7" y="3" width="10" height="5" rx="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8 13h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="sr-only" data-i18n="btn.print">Print</span>
+      </button>
 
-            <p><strong>Liven Tech</strong> - <span data-i18n="liven_role">Product Manager</span> (Jun 2021 - Dec 2022)</p>
-            <ul>
-                <li data-i18n="liven_responsibility_1">Management of technology teams and product planning.</li>
-                <li data-i18n="liven_responsibility_2">Allocation of squads and schedule management in agile projects.</li>
-            </ul>
-
-            <p><strong>Fila Digital</strong> - <span data-i18n="fila_role">Backend Developer</span> (Dec 2021 - Nov 2022)</p>
-            <ul>
-                <li data-i18n="fila_responsibility_1">Infrastructure optimization with Google Cloud Run.</li>
-                <li data-i18n="fila_responsibility_2">Development of notification system with Google Cloud Tasks.</li>
-            </ul>
-
-            <p><strong>Serasa Experian</strong> - <span data-i18n="serasa_role">Python RPA Developer</span> (Nov 2018 - Jun 2021)</p>
-            <ul>
-                <li data-i18n="serasa_responsibility_1">Automation of financial processes with Python, Selenium, and Flask.</li>
-                <li data-i18n="serasa_responsibility_2">Collaboration on global projects with teams from Europe and Latin America.</li>
-                <li data-i18n="serasa_responsibility_3">Mentoring and training of new interns in RPA.</li>
-            </ul>
-        </div>
-        
-         
-        <div class="section">
-            <h2 data-i18n="education_title">Education</h2>
-            <p><strong>Universidade Federal de Lavras (UFLA)</strong> - <span data-i18n="ufla_course">Computer Science</span> (2015 - 2021)</p>
-            <p><strong>Escola Técnica Estadual de Furnas (ETEC)</strong> - <span data-i18n="furnas_course">Electrical Engineering Technician</span> (2013 - 2014)</p>
-            <p><strong>Instituto Federal do Sul de Minas (IFsul - Passos)</strong> - <span data-i18n="if_course">Professional Course in Web Design</span> (2013)</p>
-        </div>
-        
-        <div class="section skills">
-            <h2 data-i18n="technical_skills_title">Technical Skills</h2>
-            <ul>
-                <li data-i18n="skill_js">JavaScript (React, Node.js)</li>
-                <li data-i18n="skill_python">Python</li>
-                <li data-i18n="skill_java">Java</li>
-                <li data-i18n="skill_git">Git</li>
-                <li data-i18n="skill_gcp">Google Cloud Platform (GCP)</li>
-                <li data-i18n="skill_docker">Docker & Kubernetes</li>
-                <li data-i18n="skill_csharp">C# (.NET Core, Azure Functions)</li>
-                <li data-i18n="skill_clean_architecture">Clean Architecture</li>
-                <li data-i18n="skill_firebase">Firebase</li>
-            </ul>
-        </div>
-        
-        <div class="section">
-            <h2 data-i18n="certifications_title">Certifications</h2>
-            <ul>
-                <li data-i18n="cert_azure">Microsoft Certified: Azure Fundamentals</li>
-                <li data-i18n="cert_kanban">Kanban Practitioner Certified</li>
-                <li data-i18n="cert_six_sigma">Yellow Belt Lean Six Sigma</li>
-            </ul>
-        </div>
-        <footer class="show-on-print">
-            <p data-i18n="footer"><a href="https://o-marcocosta.github.io/resume/src/index.html" target="_blank">Access web version</a></p>
-        </footer>
+      <button id="pdfBtn" type="button" aria-label="Download PDF">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 3v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="3" y="17" width="18" height="4" rx="1" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        <span class="sr-only" data-i18n="btn.pdf">Download PDF</span>
+      </button>
     </div>
+    <div class="lang-switcher" role="group" aria-label="Language switcher">
+      <button class="lang-btn" data-lang="en" aria-label="English">
+        <span class="flag" aria-hidden="true">
+          <img src="https://kapowaz.github.io/circle-flags/flags/gb.svg" alt="English">
+        </span>
+      </button>
+
+      <button class="lang-btn" data-lang="pt" aria-label="Português">
+        <span class="flag" aria-hidden="true">
+          <img src="https://kapowaz.github.io/circle-flags/flags/br.svg" alt="Português">
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <main id="resume" class="page-wrap">
+    <header class="hero">
+      <div>
+        <h1>Marco Túlio Costa</h1>
+        <p class="headline" data-i18n="headline">Senior Software Engineer | Tech Lead | Cloud &amp; Distributed Systems</p>
+      </div>
+      <div class="contact-grid">
+        <a href="mailto:marcotscosta@gmail.com">marcotscosta@gmail.com</a>
+        <a href="https://www.linkedin.com/in/o-marcocosta" target="_blank"
+          rel="noreferrer">linkedin.com/in/o-marcocosta</a>
+        <a href="https://github.com/o-marcocosta" target="_blank" rel="noreferrer">github.com/o-marcocosta</a>
+        <a href="https://marcocosta.dev.br" target="_blank" rel="noreferrer">marcocosta.dev.br</a>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2 data-i18n="section.summary">Professional Summary</h2>
+      <p data-i18n="summary.p1">
+        Software Engineer with 10+ years of experience building scalable distributed systems using .NET, React, and
+        cloud platforms (Azure &amp; GCP).
+      </p>
+      <p data-i18n="summary.p2">
+        Strong experience leading end-to-end system delivery, designing reusable architectures, and driving technical
+        decisions in high-impact projects. Recognized as a technical reference, with experience in client-facing roles,
+        team mentorship, and accelerating development through internal frameworks and AI-driven tooling.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2 data-i18n="section.experience">Professional Experience</h2>
+
+      <article class="job">
+        <div class="job-header">
+          <div>
+            <h3>Accenture Brazil</h3>
+            <p class="role" data-i18n="accenture.role">Senior Software Engineer / Tech Lead</p>
+          </div>
+          <span class="date" data-i18n="accenture.date">Jul 2023 - Present</span>
+        </div>
+        <ul>
+          <li data-i18n="accenture.li1">Led the end-to-end development of a critical system for a multinational company in the mining/industrial sector, acting as the primary technical owner from architecture design to production go-live</li>
+          <li data-i18n="accenture.li2">Designed and implemented a reusable internal .NET framework to accelerate development across multiple systems</li>
+          <li data-i18n="accenture.li3">Led a database migration initiative from NoSQL to relational model in a mission-critical system, ensuring delivery under strict deadlines</li>
+          <li data-i18n="accenture.li4">Acted as a technical reference for the team, leading code reviews, architecture decisions, and task breakdown</li>
+          <li data-i18n="accenture.li5">Collaborated directly with stakeholders and business teams, translating complex requirements into scalable technical solutions</li>
+          <li data-i18n="accenture.li6">Supported backlog prioritization, planning, and technical discovery of new features</li>
+          <li data-i18n="accenture.li7">Contributed to initiatives involving Generative AI, including developer productivity improvements and AI-assisted workflows</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-header">
+          <div>
+            <h3>Fila Digital</h3>
+            <p class="role" data-i18n="fila.role">Backend Developer</p>
+          </div>
+          <span class="date">Dec 2021 - Nov 2022</span>
+        </div>
+        <ul>
+          <li data-i18n="fila.li1">Led infrastructure migration from container orchestration to a serverless platform, reducing operational costs</li>
+          <li data-i18n="fila.li2">Developed scheduled notification system using cloud-native services</li>
+          <li data-i18n="fila.li3">Contributed to backend evolution and system scalability improvements</li>
+          <li data-i18n="fila.li4">Introduced and applied Clean Architecture principles</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-header">
+          <div>
+            <h3>Liven Tech</h3>
+            <p class="role" data-i18n="liven.role">Product Manager</p>
+          </div>
+          <span class="date">Jun 2021 - Dec 2022</span>
+        </div>
+        <ul>
+          <li data-i18n="liven.li1">Managed cross-functional teams (engineering, QA, product) delivering SaaS solutions</li>
+          <li data-i18n="liven.li2">Led product planning, backlog prioritization, and delivery coordination</li>
+          <li data-i18n="liven.li3">Defined product requirements and aligned technical solutions with business goals</li>
+          <li data-i18n="liven.li4">Worked closely with stakeholders to ensure delivery within scope and timeline</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-header">
+          <div>
+            <h3>Serasa Experian</h3>
+            <p class="role" data-i18n="serasa.role">Python RPA Developer</p>
+          </div>
+          <span class="date">Nov 2018 - Jun 2021</span>
+        </div>
+        <ul>
+          <li data-i18n="serasa.li1">Developed automation solutions using Python, Selenium, and web automation tools</li>
+          <li data-i18n="serasa.li2">Contributed to global projects, collaborating with teams across Europe and Latin America</li>
+          <li data-i18n="serasa.li3">Trained and mentored new team members in automation practices</li>
+          <li data-i18n="serasa.li4">Participated in digital transformation initiatives within financial operations</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="section skills-section">
+      <h2 data-i18n="section.skills">Technical Skills</h2>
+      <div class="skills-two-col">
+        <div class="skill-group">
+          <h4 data-i18n="skills.languages">Languages</h4>
+          <p>C#, JavaScript, TypeScript, Python, Java</p>
+        </div>
+
+        <div class="skill-group">
+          <h4 data-i18n="skills.frontend">Frontend</h4>
+          <p>React, React Native, JavaFX</p>
+        </div>
+
+        <div class="skill-group">
+          <h4 data-i18n="skills.backend">Backend</h4>
+          <p>.NET (ASP.NET Core, Serverless), Node.js</p>
+        </div>
+
+        <div class="skill-group">
+          <h4 data-i18n="skills.cloud">Cloud &amp; Infrastructure</h4>
+          <p>Azure (Functions, Messaging, Monitoring), Google Cloud Platform, Docker, Kubernetes, Terraform (IaC)</p>
+        </div>
+
+        <div class="skill-group">
+          <h4 data-i18n="skills.arch">Architecture &amp; Practices</h4>
+          <p>Clean Architecture, Event-driven Architecture, Microservices, CI/CD</p>
+        </div>
+
+        <div class="skill-group">
+          <h4 data-i18n="skills.databases">Databases</h4>
+          <p data-i18n="skills.databases.val">SQL and NoSQL databases (relational and document-based)</p>
+        </div>
+
+        <div class="skill-group">
+          <h4 data-i18n="skills.ai">AI &amp; Productivity</h4>
+          <p data-i18n="skills.ai.val">GitHub Copilot, Prompt Engineering, AI-assisted development workflows</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section meta-grid">
+      <section class="subsection">
+        <h2 data-i18n="section.education">Education</h2>
+        <div class="edu-item">
+          <h4 data-i18n="edu.degree1">Bachelor's Degree in Computer Science</h4>
+          <p>Universidade Federal de Lavras (UFLA)</p>
+          <span>2015 - 2021</span>
+        </div>
+        <div class="edu-item">
+          <h4 data-i18n="edu.degree2">Technical Degree in Electrical Engineering</h4>
+          <p>Escola Técnica Estadual de Furnas (ETEF)</p>
+          <span>2013 - 2014</span>
+        </div>
+        <div class="edu-item">
+          <h4 data-i18n="edu.degree3">Professional Course in Web Design</h4>
+          <p>Instituto Federal do Sul de Minas (IFSul)</p>
+          <span>2013</span>
+        </div>
+      </section>
+
+      <section class="subsection">
+        <h2 data-i18n="section.talks">Talks &amp; Community</h2>
+        <ul>
+          <li data-i18n="talks.li1">Speaker on Software Architecture for developers (2024)</li>
+          <li data-i18n="talks.li2">Speaker on technology careers for university students (2024)</li>
+          <li data-i18n="talks.li3">Conducted workshops and courses on Web Development and React (2016-2018)</li>
+        </ul>
+      </section>
+
+      <section class="subsection">
+        <h2 data-i18n="section.certifications">Certifications</h2>
+        <ul>
+          <li data-i18n="cert.li1">Microsoft Certified: Azure Fundamentals</li>
+          <li data-i18n="cert.li2">Kanban Practitioner Certified</li>
+          <li data-i18n="cert.li3">Yellow Belt Lean Six Sigma</li>
+        </ul>
+      </section>
+
+      <section class="subsection">
+        <h2 data-i18n="section.languages">Languages</h2>
+        <ul>
+          <li data-i18n="lang.pt">Portuguese — Native</li>
+          <li data-i18n="lang.en">English — Full Professional</li>
+          <li data-i18n="lang.es">Spanish — Full Professional</li>
+        </ul>
+      </section>
+    </section>
+  </main>
 </body>
+
 </html>
