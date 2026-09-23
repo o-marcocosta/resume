@@ -3,11 +3,14 @@ function printResume() {
 }
 
 function downloadPDF() {
-  // download a fixed, pre-generated PDF file named 'resume.pdf' located in the assets folder
-  const url = '.\\assets\\resume.pdf';
+  const lang = document.documentElement.lang === 'pt' ? 'pt' : 'en';
+  const url = `./assets/Resume-${lang}.pdf`;
+  const filename = lang === 'pt'
+    ? 'Marco_Tulio_Costa_Curriculo.pdf'
+    : 'Marco_Tulio_Costa_Resume.pdf';
   const a = document.createElement('a');
   a.href = url;
-  a.download = 'Marco_Tulio_Costa_Resume.pdf';
+  a.download = filename;
   document.body.appendChild(a);
   a.click();
   a.remove();
